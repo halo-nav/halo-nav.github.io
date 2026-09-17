@@ -1,0 +1,240 @@
+body {
+  min-height: 100%;
+  background-color: #fff;
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+  margin: 0 auto;
+  padding: 2em 2em;
+  box-sizing: border-box;
+  line-height: 1.5em;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+  line-height: 1.5em;
+  margin-bottom: 0.5em;
+}
+h2 {
+  font-size: 1.3em;
+  text-align: center;
+  font-weight: 600;
+}
+
+a,
+a:link,
+a:visited {
+  color: inherit;
+}
+
+section {
+  padding-bottom: 1em;
+  max-width: 50em;
+  margin: 0 auto;
+}
+
+p {
+  margin-left: auto;
+  margin-right: auto;
+}
+figure{
+    display: inline-block;
+}
+button {
+  background: #fff;
+  border-radius: 0.5em;
+  border: 1.5px solid #333;
+  padding: 0.5em 2em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+.video-container {
+  width: 100%;
+  max-width: 640px; /* Prevents the video from stretching too large on big screens */
+  margin: 0 auto;   /* Centers the video on the page */
+  aspect-ratio: 4 / 3; 
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the video content fits cleanly in the box */
+}
+
+.table-container {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.scaling-table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  table-layout: auto; 
+}
+
+.scaling-table th, 
+.scaling-table td {
+  padding: 8px 4px;
+  text-align: center;
+  font-size: clamp(11px, 1.5vw, 16px); 
+  word-wrap: break-word;      
+  overflow-wrap: break-word;  
+  white-space: normal;        
+  word-break: break-all
+}
+.responsive-figure-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 24px;                      
+  width: 100%;
+  max-width: 1100px;               
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box
+}
+
+.grid-item-large {
+  margin-bottom: 30px;
+}
+
+.grid-item-fullwidth {
+  grid-column: span 2;
+}
+
+.snapshot-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;                       /* Spacing between the 4 small images */
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.responsive-figure-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.responsive-figure-grid figcaption {
+  font-size: clamp(10px, 1.2vw, 14px);
+  margin-top: 5px;
+  color: #555;
+}
+@media (min-width: 650px) {
+  .responsive-figure-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Top row splits 50/50 */
+    gap: 24px;
+  }
+
+  .grid-item-large {
+    margin-bottom: 0; /* Reset mobile margin */
+  }
+
+  .grid-item-fullwidth {
+    grid-column: span 2; /* Bottom row stretches across both columns */
+  }
+
+  .snapshot-row {
+    gap: 12px; /* Wider spacing for desktop */
+  }
+}
+
+
+#tilted-method,
+#tilted-method-narrow {
+  display: block;
+  margin: 0 auto;
+  width: 70em;
+  max-width: 100%;
+}
+#tilted-method-narrow {
+  display: none;
+}
+#tilted-method-very-narrow {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  #tilted-method {
+    display: none;
+  }
+  #tilted-method-narrow {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #tilted-method-narrow {
+    display: none;
+  }
+  #tilted-method-very-narrow {
+    display: block;
+  }
+}
+
+.square-container {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 0.5em 1em;
+  position: relative;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 800px) {
+  .square-container > div:nth-child(1) {
+    font-size: 0.75em;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .square-container {
+    flex-wrap: wrap;
+  }
+  .square-container > div:nth-child(1) {
+    font-size: 0.65em;
+  }
+  .square-container > div:nth-child(2) {
+    width: 18em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .square-container > div:nth-child(1) {
+    font-size: 0.375em;
+  }
+}
+
+/* Children are (matrices/LaTeX, text). */
+.square-container > div:nth-child(1) {
+  vertical-align: middle;
+  text-align: center;
+  text-wrap: nowrap;
+}
+
+.square-container > div:nth-child(1) > * {
+  vertical-align: middle;
+}
+
+.square-container > div:nth-child(2) {
+  text-align: left;
+}
+
+/* Math */
+@media screen and (max-width: 640px) {
+  .katex-display {
+    font-size: 0.875em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .katex-display {
+    font-size: 0.75em;
+  }
+}

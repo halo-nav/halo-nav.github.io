@@ -1,0 +1,397 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <meta charset="utf-8" />
+    <title>HALo</title>
+
+    <meta content="" name="description" />
+    <meta
+      content="HALo: Hilbert-Space Active Localizability for Scalar Field Navigation"
+      property="og:title"
+    />
+    <meta
+      content="A Hilbert-Space active localizability method for scalar field navigation using an MPPI controller and Fisher information."
+      property="og:description"
+    />
+    <meta
+      content="assets/Representative_fig.png"
+      property="og:image"
+    />
+    <meta
+      content="A Hilbert-Space active localizability method for scalar field navigation using an MPPI controller and Fisher information."
+      property="twitter:title"
+    />
+    <meta
+      content="A Hilbert-Space active localizability method for scalar field navigation using an MPPI controller and Fisher information."
+      property="twitter:description"
+    />
+    <meta
+      content="assets/Representative_fig.png"
+      property="twitter:image"
+    />
+    <meta property="og:type" content="website" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+
+    <link href="assets/favicon.svg" rel="shortcut icon" type="image/x-icon" />
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link
+      href="https://fonts.gstatic.com"
+      rel="preconnect"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
+      type="text/javascript"
+    ></script>
+    <script type="text/javascript">
+      WebFont.load({
+        google: {
+          families: [
+            "Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic",
+          ],
+        },
+      });
+    </script>
+    <!--[if lt IE 9
+      ]><script
+        src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"
+        type="text/javascript"
+      ></script
+    ><![endif]-->
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
+      integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Image compare utility. -->
+    <link href="./image-compare.css" rel="stylesheet" type="text/css" />
+    <script src="./image-compare.js" type="text/javascript"></script>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css"
+    />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <!-- KaTeX -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+      integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"
+      integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+      integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false },
+            { left: "\\(", right: "\\)", display: false },
+            { left: "\\[", right: "\\]", display: true },
+          ],
+          // • rendering keys, e.g.:
+          throwOnError: false,
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <h1 style="font-family: Lato; margin: 0.25em 0">
+      <b>HALo</b>:<b>H</b>ilbert-space <b>Active</b> <b>Localizability</b><br> for Scalar Field Navigation
+    </h1>
+    <div style="height: 1em"></div>
+
+    <!-- Authors -->
+    <div
+      style="
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        gap: 0.4em 1.25em;
+        max-width: 30em;
+        margin: 0 auto;
+        font-weight: 400;
+        color: blue;
+      "
+    >
+      <div>
+        Anonymous Authors</div>
+
+</div>
+    <!-- Affiliations -->
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+        max-width: 30em;
+        margin: 0 auto;
+        font-weight: 400;
+      "
+    >
+    </div>
+    <div style="height: 1em"></div>
+
+    <!-- Links -->
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        gap: 0.5em 1em;
+        flex-wrap: wrap;
+      "
+    >
+      <a href="https://github.com/halo-nav/halo" target="_blank">
+        <button>
+          <i class="ti ti-brand-github"></i>
+          GitHub
+        </button>
+      </a>
+      <a href="assets/paper.pdf" target="_blank">
+        <button>
+          <i class="ti ti-article"></i>
+          Paper
+        </button>
+      </a>
+      <a href="https://github.com/halo-nav/halo-dataset" target="_blank">
+        <button>
+          <i class="ti ti-database"></i>
+          Dataset
+        </button>
+      </a>
+      <script type="text/javascript">
+        function toggleBibtex() {
+          const $bibtex = $("#bibtex");
+          $bibtex.css(
+            "display",
+            $bibtex.css("display") === "none" ? "block" : "none",
+          );
+        }
+      </script>
+      <a onclick="toggleBibtex()">
+        <button>
+          <i class="ti ti-book-2"></i>
+          BibTeX
+        </button>
+      </a>
+    </div>
+    <section id="bibtex" style="display: none">
+      <div style="height: 1em"></div>
+      <div style="height: 1em"></div>
+      <p>
+        <code
+          style="
+            font-family:
+              Courier New,
+              Courier,
+              monospace;
+            white-space: nowrap;
+            width: 100%;
+            max-width: 100%;
+            overflow: scroll;
+            display: block;
+            background-color: #f7f7f7;
+            padding: 1em;
+            box-sizing: border-box;
+            border-radius: 0.5em;
+          "
+        >
+          Provided upon acceptance! <br/>
+        </code>
+      </p>
+    </section>
+
+    <!-- tldr -->
+    <p style="text-align: center">
+      <strong>TLDR</strong>
+      <em>
+        A Hilbert-space accelerated method for computing full-rank Fisher information for scalar field navigation.<br />
+      </em>
+    </p>
+
+    <!-- Big figure -->
+     <div style="text-align:center;">
+    <img src="./assets/Representative_fig.png" id="halo_rep" style="width: 40em; height: auto; max-width:80%;" />
+     </div>
+    <section>
+      <h2>Overview</h2>
+      <p>
+        This paper presents <b>H</b>ilbert-space <b>A</b>ctive <b>Lo</b>calizability, a method that uses the reduced-rank Hilbert-space GP to calculate an efficient proxy for a full-rank Fisher information matrix. The method uses the eigen basis to create an addition to the canonical FIM to recover the full-rank FIM.
+      </p>
+
+      <p>The following are the list of contributions of this paper in brief:</p>
+      <ol>
+        <li><b>Closed-form Hessian basis for Hilbert-space predicted scalar fields</b>:  We derive the exact Hessian of a Hilbert-space Gaussian process posterior mean in closed form via the eigenbasis's second-order derivative, extending the closed form gradient computation to full second-order structure.</li>
+        <li><b>Rank recovery for scalar-field Fisher information</b>: While the Fisher information indicates localizability, in scalar fields it remains rank deficient due to directional constraints. We recover the rank via a curvature augmentation using eigenbasis Hessian computations.</li>
+    <li><b>MPPI-based validation of curvature-augmented localizability</b>: We demonstrate that contributions (1) and (2) make a tractable embedding of the localizability in an MPPI without per-rollout gradient computations, showing improved localization performance.</li>
+      </ol>
+
+      An overview video is being prepared.
+           <!--<div class="video-container"; style="text-align: center;">
+     <video controls>
+  <source src="assets/Video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>-->
+      
+    </section>
+    <section>
+        <h2>Mechanism</h2>
+        <p>
+            A GP defines the measurement model, where $z$ is corrupted by zero-mean Gaussian noise, the FIM can be written as:
+            $$
+            I_\mathbf{x}(z) = \frac{1}{\sigma^2}J_\mathbf{x} J_\mathbf{x}^\top, ~J_\mathbf{x} = \frac{\partial \mathbf{z}}{\partial \mathbf{x}}
+            $$
+
+            This measure in general is considered rank-deficient due to the directional constraints on the scalar field.
+        </p>
+
+        <p>
+            To address this we build a Hessian additive term to recover the full rank FIM.
+
+            $$
+                H(\mathbf{x}) = \sum_j w_j\, H_j(\mathbf{x}), \qquad [H_j(\mathbf{x})]_{kl} = \frac{\partial^2\phi_j}{\partial x_k\partial x_l}(\mathbf{x})
+                $$            
+                which gives the exact Hessian of the posterior mean at any query point, in closed form, consistent with the gradient and value computations above using the eigenbasis, providing efficient $\mathcal{O}(Pmd^2)$ computations per rollout after an initial $O(m^3)$ computation.
+        </p>
+
+        The Hessian is used to compute the full rank FIM and in turn a localizability term that penalizes information poor regions of the scalar field.
+
+        <p>
+            $$
+            I(\mathbf{x}) = \mathbb{E}[I_\mathbf{x}] + \gamma\, H(\mathbf{x})H(\mathbf{x})^\top
+            $$
+        </p>
+        <p>
+            where $\gamma$ absorbs the patch second-moment scale $M$. The scalar localizability score used by the planner is the smallest eigenvalue of $I(\mathbf{x})$, corresponding to the worst-constrained direction under the Cram\'er-Rao bound:
+        </p>
+        <p>
+            $$
+            \ell(\mathbf{x}) = \lambda_{\min}\big(I(\mathbf{x})\big)
+            $$
+        </p>
+        
+    </section>
+    <section>
+      <h2>Results</h2>
+      <p>
+          We explore the impact of HALo on the scalar field navigation task. We have two different experiments run, (1) simulation results, where we test the feasability and usefulness of the proposed mechanism, and (2) tests and comparisons on a real scalar field.
+      </p>
+      <h3>Simulation Results</h3>
+      <p>The simulation results are compared on a synthetic map with $n=10$ trials traversing across the field. The scalar field has a single high intensity region.</p>
+
+        <div style="text-align: center">
+          <img
+            src="./assets/rmse_average_vs_weight.png"
+            style="width: 20em; max-width: 100%"
+          />
+          <img
+            src="./assets/localization_proxy_vs_weight.png"
+            style="width: 20em; max-width: 100%"
+          />
+          <br>
+          <img
+            src="./assets/goal_reachability_vs_weight.png"
+            style="width: 20em; max-width: 100%"
+          />
+          <img
+            src="./assets/rmse_vs_progress_0_1_2.png"
+            style="width: 20em; max-width: 100%"
+          />
+      </div>
+      <p>Increasing the localizability weight in simulation steers the robot toward informative regions of the field, cutting average localization error by up to 3x (1.18 → 0.38 RMSE) and improving goal-reaching success from 70% to 90%, with no loss of consistency across trials.</p>
+      <h3>Real Scalar Field Experiment</h3>
+      <p>
+        The framework was compared head to head on two other SoTA architectures. (i) InfoMagNav, (ii) E-RRT, (iii) InfoGainGreedy, (iv) MPPI-Baseline, and (v) Rank Deficient FIM.
+      </p>
+      <div class="table-container" style="text-align: center;">
+        <table class="scaling-table" style="margin: 0 auto; border-collapse: collapse;">
+          <tr>
+            <th style="border: 1px solid; padding:0.5em">Method</th>
+            <th style="border: 1px solid; padding:0.5em">N</th>
+            <th style="border: 1px solid; padding:0.5em">RMSE$_{\text{avg}}$ (m)</th>
+            <th style="border: 1px solid; padding:0.5em">RMSE$_{\text{final}}$ (m)</th>
+            <th style="border: 1px solid; padding:0.5em">Path Eff.</th>
+          </tr>
+          <tr>
+            <td style="border: 1px solid; border-top: 0px solid"><em>E-RRT</em></td>
+            <td style="border: 1px solid; border-top: 0px solid">5</td>
+            <td style="border: 1px solid; border-top: 0px solid">$0.623 \pm 0.305$</td>
+            <td style="border: 1px solid; border-top: 0px solid">$1.078 \pm 0.648$</td>
+            <td style="border: 1px solid; border-top: 0px solid">$0.741 \pm 0.084$</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid; border-top: 0px solid"><em>InfoGainGreedy</em></td>
+            <td style="border: 1px solid; border-top: 0px solid">4</td>
+            <td style="border: 1px solid; border-top: 0px solid">$0.681 \pm 0.248$</td>
+            <td style="border: 1px solid; border-top: 0px solid">$1.605 \pm 0.639$</td>
+            <td style="border: 1px solid; border-top: 0px solid">$0.988 \pm 0.006$</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid; border-top: 0px solid"><em>InfoMagNav</em></td>
+            <td style="border: 1px solid; border-top: 0px solid">5</td>
+            <td style="border: 1px solid; border-top: 0px solid">$0.350 \pm 0.110$</td>
+            <td style="border: 1px solid; border-top: 0px solid">$0.534 \pm 0.320$</td>
+            <td style="border: 1px solid; border-top: 0px solid">$0.991 \pm 0.005$</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid; border-top: 0px solid"><em>MPPI</em></td>
+            <td style="border: 1px solid; border-top: 0px solid">5</td>
+            <td style="border: 1px solid; border-top: 0px solid">$0.108 \pm 0.021$</td>
+            <td style="border: 1px solid; border-top: 0px solid">$0.078 \pm 0.048$</td>
+            <td style="border: 1px solid; border-top: 0px solid">$0.918 \pm 0.079$</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid; border-top: 0px solid"><em>MPPI+FIM</em></td>
+            <td style="border: 1px solid; border-top: 0px solid">5</td>
+            <td style="border: 1px solid; border-top: 0px solid">$0.117 \pm 0.017$</td>
+            <td style="border: 1px solid; border-top: 0px solid">$0.145 \pm 0.085$</td>
+            <td style="border: 1px solid; border-top: 0px solid">$0.911 \pm 0.054$</td>
+          </tr>
+          <tr style="background-color: rgba(33, 150, 243, 0.5)">
+            <td style="border: 1px solid; border-top: 0px solid"><strong>HALo</strong></td>
+            <td style="border: 1px solid; border-top: 0px solid">5</td>
+            <td style="border: 1px solid; border-top: 0px solid">$0.085 \pm 0.017$</td>
+            <td style="border: 1px solid; border-top: 0px solid">$0.059 \pm 0.030$</td>
+            <td style="border: 1px solid; border-top: 0px solid">$0.928 \pm 0.071$</td>
+          </tr>
+        </table>
+      </div>
+      <p>On a real magnetic anomaly field, HALo delivered the lowest localization error of any method tested (0.085 m average RMSE) while staying path-efficient — outperforming entropy-based, greedy, and standard Fisher-information baselines.</p>
+<h2>Conclusions and Limitations</h2>
+HALo solves the rank-deficiency problem in scalar-field localization by deriving a closed-form curvature correction to the Fisher information field, embedding it in an MPPI planner without added computational cost. It improves localization accuracy and reliability in both simulation and on a real magnetic field. Open questions remain around adapting to locally complex regions of the field, capturing global (not just local) ambiguity, and validating the full pipeline on physical hardware in real time.
+
+    <section>
+    <p style="text-align: center;">This website was inspired by <a href="https://brentyi.github.io/tilted/" target="_blank">TILTED</a></p>
+    </section>
+  </body>
+</html>
